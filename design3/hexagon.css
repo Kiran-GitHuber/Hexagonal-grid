@@ -1,0 +1,136 @@
+#grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 2% auto;
+  overflow: hidden;
+  font-size: 15px;
+  list-style-type: none;
+}
+
+.hexagon {
+  position: relative;
+  visibility: hidden;
+  outline: 1px solid transparent;
+}
+
+.hexagon::after {
+  content: '';
+  display: block;
+  padding-bottom: 86.602%;
+}
+
+.inside {
+  position: absolute;
+  width: 96%;
+  padding-bottom: 110.851%;
+  margin: 0 2%;
+  overflow: hidden;
+  visibility: hidden;
+  outline: 1px solid transparent;
+  -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+  -ms-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+  transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+}
+
+.inside * {
+  position: absolute;
+  visibility: visible;
+  outline: 1px solid transparent;
+}
+
+.link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+  background: gray;
+  -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+  -ms-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+  transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+}
+
+.hexagon h1,
+.hex p {
+  width: 100%;
+}
+
+.hexagon h1 {
+  font-size: 1.8em;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+.hexagon p {
+  bottom: 25%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.hexagon h1::after {
+  position: relative;
+  left: 45%;
+  width: 10%;
+  text-align: center;
+}
+
+
+/* sizing and row indents */
+
+@media (min-width:1201px) {
+  #grid {
+    padding-bottom: 4.4%
+  }
+  .hexagon {
+    width: 20%;
+  }
+  .hexagon:nth-child(9n+6) {
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 1200px) and (min-width:901px) {
+  #grid {
+    padding-bottom: 5.5%
+  }
+  .hexagon {
+    width: 25%;
+  }
+  .hexagon:nth-child(7n+5) {
+    margin-left: 12.5%;
+  }
+}
+
+@media (max-width: 900px) and (min-width:601px) {
+  #grid {
+    padding-bottom: 7.4%
+  }
+  .hexagon {
+    width: 33.333%;
+  }
+  .hexagon:nth-child(5n+4) {
+    margin-left: 16.666%;
+  }
+}
+
+@media (max-width: 600px) {
+  #grid {
+    padding-bottom: 11.2%
+  }
+  .hexagon {
+    width: 50%;
+  }
+  .hexagon:nth-child(3n+3) {
+    margin-left: 25%;
+  }
+}
+
+@media (max-width: 400px) {
+  #grid {
+    font-size: 13px;
+  }
+}

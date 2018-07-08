@@ -1,0 +1,84 @@
+body, html{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    background-color: white;
+    margin:0;
+    overflow: auto;
+}
+
+.main-grid{
+    display: grid;
+    grid-column-gap: 2.3vw;
+    grid-row-gap: 7vw;
+    grid-template-columns:
+                repeat(5, 7vw);
+    grid-auto-rows: 7vw;
+    grid-template-areas:
+         "g1 . g2 . g3"    
+         ". g4 . g5 . "
+         "g6 . g7 . g8";
+    justify-content: space-evenly;
+}
+
+.hex1{
+    grid-area: g1;
+}
+.hex2{
+    grid-area: g2;
+}
+.hex3{
+    grid-area: g3;
+}
+.hex4{
+    grid-area: g4;
+}
+.hex5{
+    grid-area: g5;
+}
+
+.hex6{
+    grid-area: g6;
+}
+.hex7{
+    grid-area: g7;
+}
+.hex8{
+    grid-area: g8;
+}
+
+
+.clip-o{
+  position: relative;
+  background-color: grey;
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: polygon(43.30% 0%, 86.60% 25%, 86.60% 75%, 43.30% 100%, 0% 75%, 0% 25%);
+  clip-path: polygon(43.30% 0%, 86.60% 25%, 86.60% 75%, 43.30% 100%, 0% 75%, 0% 25%);
+  transform: scale(2.5);
+}
+
+.clip-o:hover{
+  transition: ease-out 0.1s transform;
+  z-index: 1;
+  transform: scale(2.7);
+  box-shadow: 500px 500px 500px 500px black;
+}
+
+@media (max-width: 700px){
+  
+.main-grid{
+  grid-column-gap: 5.5vw;
+  grid-row-gap: 17vw;
+  grid-template-columns:
+                repeat(3, 17vw);
+  grid-auto-rows: 17vw;
+  grid-template-areas:
+         "g1 . g2"
+         ". g3 ."
+         "g4 . g5"
+         " . g6 ."
+         "g7 . g8";
+  }
+}
